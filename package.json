@@ -1,0 +1,48 @@
+{
+  "name": "stupid",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "pretest": "npm run lint && npm run compile",
+    "start": "node --harmony $main",
+    "start:dev": "echo \"Running start:dev script \"",
+    "prestart:dev": "echo \"Running pre start dev \"",
+    "lint": "jshint *.js",
+    "compile:ts": "tsc --outDir ./lib --module commonjs ./src/tsCode.ts",
+    "compile": "npm run compile:ts",
+    "precompile": "npm run clean",
+    "clean": "rimraf lib/*",
+    "build:bundle": "browserify ./src/js/b.js ./lib/tscode.js | uglifyjs > ./src/js/out.min.js",
+    "watch:src": "watch .",
+    "build": "npm run clean && npm run compile && npm run build:bundle",
+    "watch:server": "nodemon --ignore client --ignore public index.js",
+    "watch:browser": "live-reload --port 9091 lib/",
+    "version:major": "npm version major",
+    "version:minor": "npm version minor",
+    "version:patch": "npm version patch"
+  },
+  "jshintConfig": {
+    "esnext": "true",
+    "noyield": "true"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "jshint": "^2.8.0",
+    "live-reload": "^1.1.0",
+    "mocha": "^2.3.3",
+    "nodemon": "^1.8.1",
+    "rimraf": "^2.4.3",
+    "should": "^7.1.1",
+    "typescript": "^1.6.2",
+    "uglify-js": "^2.5.0",
+    "watch": "^0.16.0"
+  },
+  "dependencies": {
+    "koa": "^1.1.1",
+    "uniq": "^1.0.1"
+  }
+}
