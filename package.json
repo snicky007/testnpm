@@ -44,5 +44,9 @@
   "dependencies": {
     "koa": "^1.1.1",
     "uniq": "^1.0.1"
+  },
+  "repository" : {
+  	"type":"git",
+  	"url" : "https://github.com/snicky007/testnpm.git"
   }
 }
