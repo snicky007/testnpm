@@ -1,6 +1,6 @@
 {
   "name": "stupid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
@@ -45,8 +45,8 @@
     "koa": "^1.1.1",
     "uniq": "^1.0.1"
   },
-  "repository" : {
-  	"type":"git",
-  	"url" : "https://github.com/snicky007/testnpm.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snicky007/testnpm.git"
   }
 }
